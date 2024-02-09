@@ -1147,6 +1147,9 @@ uiPlugins:
         enabled: false
         image: cccs/assemblyline-ui-plugin-lookup-malwarebazaar
         imageTag:
+        # defind any secrets for container registries hosting this image
+        #imagePullSecrets:
+        #- name: secretName
         instances: 1
         reqCPU: 250m
         reqRam: 256Mi

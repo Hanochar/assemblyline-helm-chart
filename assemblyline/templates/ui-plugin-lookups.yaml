@@ -66,6 +66,10 @@ spec:
         nodeAffinity:
 {{ $.Values.nodeAffinity | toYaml | indent 10 }}
       {{- end }}
+      {{- with $lookupConfig.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- if $lookupConfig.securityContext }}
       securityContext:
         runAsUser: {{ $lookupConfig.securityContext.user }}
